@@ -1,101 +1,121 @@
-# 🩺 Diabetes Risk Predictor
+# Diabetes Risk Predictor
 
-A beginner Machine Learning project that predicts whether a person is at **high or low risk of diabetes** based on key health indicators, using the well-known Pima Indians Diabetes Dataset.
-
-> ⚠️ This is an educational ML project — not a medical diagnosis tool.
+A Machine Learning project that predicts whether a person is at high or low risk of diabetes based on key health indicators, using the Pima Indians Diabetes Dataset.
 
 ---
 
-## 📌 Problem Statement
+## Problem Statement
 
-Diabetes is a widespread health condition that often goes undetected until it causes serious complications. Early identification of at-risk individuals can enable timely lifestyle changes and medical intervention. This project uses a machine learning model to estimate diabetes risk based on simple health metrics that most people know about themselves.
-
----
-
-## 🤖 How It Works
-
-The program uses a **Random Forest Classifier** trained on a structured health dataset. The user enters 5 health values, and the model predicts whether they are at high or low risk — along with a confidence percentage.
-
-**Input features used:**
-- Number of pregnancies
-- Glucose level (mg/dL)
-- Blood pressure (mm Hg)
-- BMI (Body Mass Index)
-- Age
+Diabetes often goes undetected until it causes serious complications. This tool takes basic health inputs that most people already know and gives them an early risk indication using a trained ML model.
 
 ---
 
-## ⚙️ Setup Instructions
+## How It Works
 
-### 1. Make sure Python is installed
-Download from https://www.python.org if you don't have it.
+The program uses a Random Forest Classifier trained on a structured health dataset. The user enters 5 values and the model predicts High Risk or Low Risk along with a confidence percentage.
 
-### 2. Install required libraries
+---
+
+## Requirements
+
+- Python 3.7 or above
+- pandas
+- scikit-learn
+
+---
+
+## Setup and Installation
+
+### Step 1 — Install Python
+
+Download and install Python from https://www.python.org/downloads/
+Make sure to check "Add Python to PATH" during installation.
+
+### Step 2 — Install dependencies
+
+Open your terminal or command prompt and run:
+
 ```bash
 pip install pandas scikit-learn
 ```
 
-### 3. Clone or download this repository
+### Step 3 — Clone the repository
+
 ```bash
-git clone https://github.com/YOUR_USERNAME/diabetes-risk-predictor.git
+git clone https://github.com/ShubratJain-VITBhopal/diabetes-risk-predictor.git
 cd diabetes-risk-predictor
 ```
 
-### 4. Run the program
+Or download the ZIP from GitHub and extract it.
+
+### Step 4 — Run the program
+
+Make sure you are inside the project folder, then run:
+
 ```bash
 python diabetes_predictor.py
 ```
 
 ---
 
-## 💻 Example Usage
+## Usage
+
+When you run the program it will ask you 5 questions:
 
 ```
-✅ Model trained successfully! Accuracy: 83.3%
+How many pregnancies? (0 if not applicable): 2
+Glucose level (mg/dL): 160
+Blood pressure (mm Hg): 80
+BMI value: 34.5
+Age: 45
+```
 
-        🩺 Diabetes Risk Predictor            
+Example output:
 
-Answer the following questions about yourself.
+```
+Model Accuracy: 75.0 %
 
-Number of pregnancies (enter 0 if male or none): 2
-Glucose level in mg/dL (e.g. 120): 160
-Blood pressure in mm Hg (e.g. 70): 80
-BMI - Body Mass Index (e.g. 28.5): 34.5
-Age in years (e.g. 35): 45
+------------------------------------------
+         Diabetes Risk Predictor
+------------------------------------------
+Note: This is only for educational use.
 
-  Prediction : HIGH RISK of Diabetes
-  Confidence   : 78.0%
+------------------------------------------
+  Result : HIGH RISK
+  Model confidence : 78.0 %
 
-  ⚕️  Please consult a doctor for proper testing.
+  Please visit a doctor for proper checkup.
+------------------------------------------
+
+Disclaimer - this is a college project, not real medical advice.
 ```
 
 ---
 
-## 📊 Dataset
+## Dataset
 
-The dataset (`diabetes_data.csv`) is based on the **Pima Indians Diabetes Dataset**, a widely used benchmark dataset in ML research. It contains patient health records with the following columns:
+The file `diabetes_data.csv` contains 60 patient records based on the Pima Indians Diabetes Dataset.
 
-| Column | Description |
-|---|---|
-| `pregnancies` | Number of times pregnant |
-| `glucose` | Plasma glucose concentration (mg/dL) |
-| `blood_pressure` | Diastolic blood pressure (mm Hg) |
-| `bmi` | Body Mass Index |
-| `age` | Age in years |
-| `diabetes` | 1 = Diabetic, 0 = Not Diabetic |
-
----
-
-## 🛠️ Libraries Used
-
-- `pandas` — loading and processing the dataset
-- `scikit-learn` — Random Forest model, train/test split, accuracy evaluation
+| Column         | Description                       |
+| -------------- | --------------------------------- |
+| pregnancies    | Number of times pregnant          |
+| glucose        | Plasma glucose level in mg/dL     |
+| blood_pressure | Diastolic blood pressure in mm Hg |
+| bmi            | Body Mass Index                   |
+| age            | Age in years                      |
+| diabetes       | 1 = Diabetic, 0 = Not Diabetic    |
 
 ---
 
-## 🔍 Algorithm
+## Libraries Used
 
-**Random Forest Classifier** — an ensemble method that builds multiple decision trees and combines their outputs for a more accurate and stable prediction. It is well-suited for health datasets with mixed numeric features.
+- pandas — for loading and processing the CSV dataset
+- scikit-learn — for the Random Forest model, train/test split, and accuracy evaluation
 
 ---
 
+## Algorithm
+
+Random Forest Classifier — builds multiple decision trees and combines their results for a more stable and accurate prediction. Chosen over Logistic Regression because it gave higher accuracy on this dataset.
+
+---
